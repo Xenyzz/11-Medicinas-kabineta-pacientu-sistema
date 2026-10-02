@@ -8,6 +8,17 @@ package dao;
  *
  * @author Nikita.Sersts
  */
+import java.util.ArrayList;
+import java.util.List;
+import model.Recepte;
+
 public class RecepteDAO {
-    
+
+    public void add(Recepte recepte) {
+
+    }
+
+    public List<Recepte> getReceptesByPacientsId(int pacientsId) {
+        return new ArrayList<>();
+    }
 }

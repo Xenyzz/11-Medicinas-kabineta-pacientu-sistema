@@ -8,6 +8,21 @@ package dao;
  *
  * @author Nikita.Sersts
  */
+import java.util.ArrayList;
+import java.util.List;
+import model.Diagnoze;
+
 public class DiagnozeDAO {
-    
+
+    public void add(Diagnoze diagnoze) {
+ 
+    }
+
+    public List<Diagnoze> getDiagnozesByPacientsId(int pacientsId) {
+        return new ArrayList<>();
+    }
+
+    public boolean updateDiagnoze(Diagnoze diagnoze) {
+        return false;
+    }
 }

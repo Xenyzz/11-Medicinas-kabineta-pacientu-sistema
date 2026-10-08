@@ -8,6 +8,8 @@ package MedicinasKabinetaPacientuSistema;
  *
  * @author Nikita.Sersts
  */
+import db.DatabaseManager;
+
 public class FormDBSystemGUI extends javax.swing.JFrame {
 
     /**
@@ -70,11 +72,14 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        DatabaseManager.init();
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new FormDBSystemGUI().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

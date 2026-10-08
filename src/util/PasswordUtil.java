@@ -9,5 +9,8 @@ package util;
  * @author Nikita.Sersts
  */
 public class PasswordUtil {
-    
+
+    public static String hash(String password) {
+        return Integer.toHexString(password.hashCode()); 
+    }
 }

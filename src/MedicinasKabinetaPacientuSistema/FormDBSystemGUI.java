@@ -17,6 +17,7 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
         initComponents();
     }
 
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,18 +52,69 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
         comboBoxRegisterRole = new javax.swing.JComboBox<>();
         btnRegisterBack = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
-        jDialog2 = new javax.swing.JDialog();
-        jButton5 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        MainDialogWin = new javax.swing.JDialog();
+        txtName = new javax.swing.JLabel();
+        txtGreetingMain = new javax.swing.JLabel();
+        txtRole = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnBeggining = new javax.swing.JButton();
+        btnVisits = new javax.swing.JButton();
+        btnPatients = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        AdminDialogWin = new javax.swing.JDialog();
+        txtAdminHeading = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        panelAdminPatient = new javax.swing.JPanel();
+        txtPatientTitle = new javax.swing.JLabel();
+        txtPacientChoose = new javax.swing.JLabel();
+        comboAssignPatient = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtPatientSelectedHeading = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        txtPatientName = new javax.swing.JLabel();
+        txtPatientCodeLabel = new javax.swing.JLabel();
+        txtPatientCodeValue = new javax.swing.JLabel();
+        panelAdminDoctor = new javax.swing.JPanel();
+        txtDoctorTitl = new javax.swing.JLabel();
+        txtDoctorChoose = new javax.swing.JLabel();
+        comboAssignDoctor = new javax.swing.JComboBox<>();
+        jSeparator9 = new javax.swing.JSeparator();
+        txtDoctorSelectedHeading = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        txtDoctorName = new javax.swing.JLabel();
+        txtDoctorCodeLabel = new javax.swing.JLabel();
+        txtDoctorCodeValue = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        btnAssignCancel = new javax.swing.JButton();
+        btnAssignConfirm = new javax.swing.JButton();
+        CalendarDialogWin = new javax.swing.JDialog();
+        txtCalendarHeading = new javax.swing.JLabel();
+        txtCalendarDoctorLabel = new javax.swing.JLabel();
+        comboCalendarDoctor = new javax.swing.JComboBox<>();
+        btnCalendarPrev = new javax.swing.JButton();
+        btnCalendarNext = new javax.swing.JButton();
+        panelCalendarGrid = new javax.swing.JPanel();
+        panelCalendarHeader = new javax.swing.JPanel();
+        txtWeekdaySun = new javax.swing.JLabel();
+        txtWeekdayMon = new javax.swing.JLabel();
+        txtWeekdayTue = new javax.swing.JLabel();
+        txtWeekdayWed = new javax.swing.JLabel();
+        txtWeekdayThu = new javax.swing.JLabel();
+        txtWeekdayFri = new javax.swing.JLabel();
+        txtWeekdaySat = new javax.swing.JLabel();
+        txtLegendFreeDot = new javax.swing.JLabel();
+        txtLegendFree = new javax.swing.JLabel();
+        txtLegendBusyDot = new javax.swing.JLabel();
+        txtLegendBusy = new javax.swing.JLabel();
         BtnLoginForm = new javax.swing.JButton();
         txtGreeting = new javax.swing.JLabel();
 
         LoginDialogWin.setTitle("Ielagošana");
+        LoginDialogWin.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                LoginDialogWinWindowClosing(evt);
+            }
+        });
 
         txtLoginHeading.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtLoginHeading.setForeground(new java.awt.Color(23, 71, 122));
@@ -112,6 +164,11 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Ielogoties");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LoginDialogWinLayout = new javax.swing.GroupLayout(LoginDialogWin.getContentPane());
         LoginDialogWin.getContentPane().setLayout(LoginDialogWinLayout);
@@ -288,112 +345,504 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jDialog2.setPreferredSize(new java.awt.Dimension(600, 450));
-
-        jButton5.setForeground(new java.awt.Color(23, 71, 122));
-        jButton5.setText("\t🏠 Sākums");
-        jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        MainDialogWin.setTitle("Medicīnas kabinets");
+        MainDialogWin.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                MainDialogWinWindowClosing(evt);
             }
         });
 
-        jButton9.setForeground(new java.awt.Color(23, 71, 122));
-        jButton9.setText("\t👥Pacienti");
-        jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        txtName.setForeground(new java.awt.Color(23, 71, 122));
+        txtName.setText("Name ");
+
+        txtGreetingMain.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtGreetingMain.setForeground(new java.awt.Color(23, 71, 122));
+        txtGreetingMain.setText("Labdien, name !");
+
+        txtRole.setForeground(new java.awt.Color(153, 153, 153));
+        txtRole.setText("Loma");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnBeggining.setForeground(new java.awt.Color(23, 71, 122));
+        btnBeggining.setText("\t🏠 Sākums");
+        btnBeggining.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
+        btnBeggining.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnBegginingActionPerformed(evt);
             }
         });
 
-        jButton10.setForeground(new java.awt.Color(23, 71, 122));
-        jButton10.setText("\t📅 Vizītes");
-        jButton10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btnVisits.setForeground(new java.awt.Color(23, 71, 122));
+        btnVisits.setText("\t📅 Vizītes");
+        btnVisits.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
+        btnVisits.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btnVisitsActionPerformed(evt);
             }
         });
 
-        jButton11.setForeground(new java.awt.Color(23, 71, 122));
-        jButton11.setText("Iziet");
-        jButton11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        btnPatients.setForeground(new java.awt.Color(23, 71, 122));
+        btnPatients.setText("\t👥 Pacienti");
+        btnPatients.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
+        btnPatients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                btnPatientsActionPerformed(evt);
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(23, 71, 122));
-        jLabel1.setText("Name ");
+        btnExit.setForeground(new java.awt.Color(23, 71, 122));
+        btnExit.setText("Iziet");
+        btnExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(23, 71, 122)));
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(23, 71, 122));
-        jLabel2.setText("Labdien, name !");
-
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("Loma");
-
-        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
-        jDialog2.getContentPane().setLayout(jDialog2Layout);
-        jDialog2Layout.setHorizontalGroup(
-            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog2Layout.createSequentialGroup()
-                        .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jDialog2Layout.createSequentialGroup()
-                                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabel2)))
-                        .addContainerGap(249, Short.MAX_VALUE))
-                    .addGroup(jDialog2Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnVisits, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBeggining, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPatients, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBeggining, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnVisits, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnPatients, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout MainDialogWinLayout = new javax.swing.GroupLayout(MainDialogWin.getContentPane());
+        MainDialogWin.getContentPane().setLayout(MainDialogWinLayout);
+        MainDialogWinLayout.setHorizontalGroup(
+            MainDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainDialogWinLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(MainDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainDialogWinLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(txtGreetingMain)
+                        .addContainerGap(227, Short.MAX_VALUE))
+                    .addGroup(MainDialogWinLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(MainDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtRole, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(53, 53, 53))))
         );
-        jDialog2Layout.setVerticalGroup(
-            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog2Layout.createSequentialGroup()
-                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDialog2Layout.createSequentialGroup()
+        MainDialogWinLayout.setVerticalGroup(
+            MainDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainDialogWinLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(txtName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MainDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainDialogWinLayout.createSequentialGroup()
+                        .addComponent(txtRole)
                         .addGap(28, 28, 28)
-                        .addComponent(jLabel1)
+                        .addComponent(txtGreetingMain))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(172, Short.MAX_VALUE))
+        );
+
+        AdminDialogWin.setTitle("Pacientu un ārstu sasaistīšana");
+        AdminDialogWin.setBackground(new java.awt.Color(255, 255, 255));
+        AdminDialogWin.setPreferredSize(new java.awt.Dimension(640, 600));
+
+        txtAdminHeading.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        txtAdminHeading.setForeground(new java.awt.Color(23, 71, 122));
+        txtAdminHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtAdminHeading.setText("Pacientu un arstu sasaistīšana ");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(110, 120, 135));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Izvēlieties pacientu un ārstējošo ārstu, pēc tam apstipriniet sasaisti.");
+
+        panelAdminPatient.setBackground(new java.awt.Color(255, 255, 255));
+        panelAdminPatient.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        panelAdminPatient.setPreferredSize(new java.awt.Dimension(240, 310));
+
+        txtPatientTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtPatientTitle.setForeground(new java.awt.Color(23, 71, 122));
+        txtPatientTitle.setText(" Pacients");
+
+        txtPacientChoose.setForeground(new java.awt.Color(110, 120, 135));
+        txtPacientChoose.setText("Izvēlieties pacientu");
+
+        comboAssignPatient.setForeground(new java.awt.Color(30, 35, 45));
+        comboAssignPatient.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pacients 1", "Pacients 2", "Pacients 3" }));
+        comboAssignPatient.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        comboAssignPatient.setPreferredSize(new java.awt.Dimension(208, 36));
+
+        jSeparator1.setForeground(new java.awt.Color(221, 228, 238));
+
+        txtPatientSelectedHeading.setForeground(new java.awt.Color(23, 71, 122));
+        txtPatientSelectedHeading.setText("Izvēlētais pacients");
+
+        jSeparator2.setForeground(new java.awt.Color(221, 228, 238));
+
+        txtPatientName.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        txtPatientName.setText("Vards, uzvards ");
+
+        txtPatientCodeLabel.setForeground(new java.awt.Color(110, 120, 135));
+        txtPatientCodeLabel.setText("Personas kods:");
+
+        txtPatientCodeValue.setText("000000-00000");
+
+        javax.swing.GroupLayout panelAdminPatientLayout = new javax.swing.GroupLayout(panelAdminPatient);
+        panelAdminPatient.setLayout(panelAdminPatientLayout);
+        panelAdminPatientLayout.setHorizontalGroup(
+            panelAdminPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdminPatientLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(panelAdminPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAdminPatientLayout.createSequentialGroup()
+                        .addComponent(txtPatientCodeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDialog2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel2)))
+                        .addComponent(txtPatientCodeValue))
+                    .addComponent(txtPatientName)
+                    .addGroup(panelAdminPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtPatientSelectedHeading)
+                        .addComponent(comboAssignPatient, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtPacientChoose)
+                        .addComponent(txtPatientTitle)
+                        .addComponent(jSeparator1)
+                        .addComponent(jSeparator2)))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        panelAdminPatientLayout.setVerticalGroup(
+            panelAdminPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdminPatientLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(txtPatientTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtPacientChoose)
                 .addGap(18, 18, 18)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(comboAssignPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPatientSelectedHeading)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtPatientName)
+                .addGap(18, 18, 18)
+                .addGroup(panelAdminPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPatientCodeLabel)
+                    .addComponent(txtPatientCodeValue))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        panelAdminDoctor.setBackground(new java.awt.Color(255, 255, 255));
+        panelAdminDoctor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        panelAdminDoctor.setPreferredSize(new java.awt.Dimension(240, 310));
+
+        txtDoctorTitl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtDoctorTitl.setForeground(new java.awt.Color(23, 71, 122));
+        txtDoctorTitl.setText("Ārsts");
+
+        txtDoctorChoose.setForeground(new java.awt.Color(110, 120, 135));
+        txtDoctorChoose.setText("Izvēlieties ārstu");
+
+        comboAssignDoctor.setForeground(new java.awt.Color(30, 35, 45));
+        comboAssignDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arsts 1", "Arsts 2", "Arsts 3" }));
+        comboAssignDoctor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        comboAssignDoctor.setPreferredSize(new java.awt.Dimension(208, 36));
+
+        jSeparator9.setForeground(new java.awt.Color(221, 228, 238));
+
+        txtDoctorSelectedHeading.setForeground(new java.awt.Color(23, 71, 122));
+        txtDoctorSelectedHeading.setText("Izvēlētais ārsts");
+
+        jSeparator10.setForeground(new java.awt.Color(221, 228, 238));
+
+        txtDoctorName.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        txtDoctorName.setText("Vards, uzvards ");
+
+        txtDoctorCodeLabel.setForeground(new java.awt.Color(110, 120, 135));
+        txtDoctorCodeLabel.setText("Personas kods:");
+
+        txtDoctorCodeValue.setText("000000-00000");
+
+        javax.swing.GroupLayout panelAdminDoctorLayout = new javax.swing.GroupLayout(panelAdminDoctor);
+        panelAdminDoctor.setLayout(panelAdminDoctorLayout);
+        panelAdminDoctorLayout.setHorizontalGroup(
+            panelAdminDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdminDoctorLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(panelAdminDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAdminDoctorLayout.createSequentialGroup()
+                        .addComponent(txtDoctorCodeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDoctorCodeValue))
+                    .addComponent(txtDoctorName)
+                    .addGroup(panelAdminDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtDoctorSelectedHeading)
+                        .addComponent(comboAssignDoctor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDoctorChoose)
+                        .addComponent(txtDoctorTitl)
+                        .addComponent(jSeparator9)
+                        .addComponent(jSeparator10)))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        panelAdminDoctorLayout.setVerticalGroup(
+            panelAdminDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdminDoctorLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(txtDoctorTitl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtDoctorChoose)
+                .addGap(18, 18, 18)
+                .addComponent(comboAssignDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDoctorSelectedHeading)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtDoctorName)
+                .addGap(18, 18, 18)
+                .addGroup(panelAdminDoctorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDoctorCodeLabel)
+                    .addComponent(txtDoctorCodeValue))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        jSeparator11.setForeground(new java.awt.Color(221, 228, 238));
+
+        btnAssignCancel.setForeground(new java.awt.Color(20, 80, 140));
+        btnAssignCancel.setText("Atcelt");
+        btnAssignCancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 80, 140)));
+        btnAssignCancel.setPreferredSize(new java.awt.Dimension(100, 38));
+        btnAssignCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignCancelActionPerformed(evt);
+            }
+        });
+
+        btnAssignConfirm.setBackground(new java.awt.Color(20, 80, 140));
+        btnAssignConfirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAssignConfirm.setForeground(new java.awt.Color(255, 255, 255));
+        btnAssignConfirm.setText("Savienot pacientu ar ārstu");
+        btnAssignConfirm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnAssignConfirm.setPreferredSize(new java.awt.Dimension(210, 38));
+
+        javax.swing.GroupLayout AdminDialogWinLayout = new javax.swing.GroupLayout(AdminDialogWin.getContentPane());
+        AdminDialogWin.getContentPane().setLayout(AdminDialogWinLayout);
+        AdminDialogWinLayout.setHorizontalGroup(
+            AdminDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminDialogWinLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(panelAdminPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(panelAdminDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+            .addGroup(AdminDialogWinLayout.createSequentialGroup()
+                .addGroup(AdminDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AdminDialogWinLayout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(txtAdminHeading))
+                    .addGroup(AdminDialogWinLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator11, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminDialogWinLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAssignCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(btnAssignConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+        AdminDialogWinLayout.setVerticalGroup(
+            AdminDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminDialogWinLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(txtAdminHeading)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(58, 58, 58)
+                .addGroup(AdminDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelAdminPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelAdminDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(AdminDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAssignConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAssignCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
+        );
+
+        CalendarDialogWin.setTitle("Vizīšu kalendārs");
+        CalendarDialogWin.setAutoRequestFocus(false);
+        CalendarDialogWin.setModal(true);
+        CalendarDialogWin.setPreferredSize(new java.awt.Dimension(760, 680));
+
+        txtCalendarHeading.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtCalendarHeading.setForeground(new java.awt.Color(23, 71, 122));
+        txtCalendarHeading.setText("Vizīšu kalendārs");
+
+        txtCalendarDoctorLabel.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        txtCalendarDoctorLabel.setText("Ārsts");
+
+        comboCalendarDoctor.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        comboCalendarDoctor.setForeground(new java.awt.Color(30, 35, 45));
+        comboCalendarDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doktors 1", "Doktors 2", "Doktors 3", "..." }));
+        comboCalendarDoctor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        comboCalendarDoctor.setPreferredSize(new java.awt.Dimension(230, 30));
+
+        btnCalendarPrev.setText("<");
+        btnCalendarPrev.setPreferredSize(new java.awt.Dimension(34, 30));
+
+        btnCalendarNext.setText(">");
+        btnCalendarNext.setPreferredSize(new java.awt.Dimension(34, 30));
+
+        panelCalendarGrid.setBackground(new java.awt.Color(255, 255, 255));
+        panelCalendarGrid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        panelCalendarGrid.setPreferredSize(new java.awt.Dimension(700, 432));
+        panelCalendarGrid.setLayout(new java.awt.GridLayout(6, 7));
+
+        panelCalendarHeader.setBackground(new java.awt.Color(255, 255, 255));
+        panelCalendarHeader.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(221, 228, 238)));
+        panelCalendarHeader.setPreferredSize(new java.awt.Dimension(700, 28));
+        panelCalendarHeader.setLayout(new java.awt.GridLayout(1, 7));
+
+        txtWeekdaySun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdaySun.setText("Sun");
+        panelCalendarHeader.add(txtWeekdaySun);
+
+        txtWeekdayMon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdayMon.setText("Mon");
+        panelCalendarHeader.add(txtWeekdayMon);
+
+        txtWeekdayTue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdayTue.setText("Tue");
+        panelCalendarHeader.add(txtWeekdayTue);
+
+        txtWeekdayWed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdayWed.setText("Wed");
+        panelCalendarHeader.add(txtWeekdayWed);
+
+        txtWeekdayThu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdayThu.setText("Thu");
+        panelCalendarHeader.add(txtWeekdayThu);
+
+        txtWeekdayFri.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdayFri.setText("Fri");
+        panelCalendarHeader.add(txtWeekdayFri);
+
+        txtWeekdaySat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtWeekdaySat.setText("Sat");
+        panelCalendarHeader.add(txtWeekdaySat);
+
+        txtLegendFreeDot.setFont(new java.awt.Font("Segoe UI", 0, 56)); // NOI18N
+        txtLegendFreeDot.setForeground(new java.awt.Color(51, 255, 51));
+        txtLegendFreeDot.setText(".");
+
+        txtLegendFree.setText("Pieejams");
+
+        txtLegendBusyDot.setFont(new java.awt.Font("Segoe UI", 0, 56)); // NOI18N
+        txtLegendBusyDot.setForeground(new java.awt.Color(255, 0, 0));
+        txtLegendBusyDot.setText(".");
+
+        txtLegendBusy.setText("Aizņemts");
+
+        javax.swing.GroupLayout CalendarDialogWinLayout = new javax.swing.GroupLayout(CalendarDialogWin.getContentPane());
+        CalendarDialogWin.getContentPane().setLayout(CalendarDialogWinLayout);
+        CalendarDialogWinLayout.setHorizontalGroup(
+            CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                .addGroup(CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(txtCalendarHeading))
+                    .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtCalendarDoctorLabel)
+                        .addGap(32, 32, 32)
+                        .addComponent(comboCalendarDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(btnCalendarPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCalendarNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelCalendarHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                                .addGroup(CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                                        .addComponent(txtLegendFreeDot)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtLegendFree)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtLegendBusyDot)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtLegendBusy))
+                                    .addComponent(panelCalendarGrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        CalendarDialogWinLayout.setVerticalGroup(
+            CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CalendarDialogWinLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(txtCalendarHeading)
+                .addGap(18, 18, 18)
+                .addGroup(CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCalendarDoctorLabel)
+                    .addComponent(comboCalendarDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalendarPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalendarNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(panelCalendarHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelCalendarGrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CalendarDialogWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtLegendFreeDot, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLegendFree)
+                    .addComponent(txtLegendBusyDot, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLegendBusy))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 400));
 
         BtnLoginForm.setBackground(new java.awt.Color(20, 80, 140));
         BtnLoginForm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BtnLoginForm.setForeground(new java.awt.Color(255, 255, 255));
         BtnLoginForm.setText("Ielogoties");
+        BtnLoginForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLoginFormActionPerformed(evt);
+            }
+        });
 
         txtGreeting.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtGreeting.setForeground(new java.awt.Color(23, 71, 122));
@@ -462,21 +911,60 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxRegisterRoleActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnBegginingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBegginingActionPerformed
+        
+    }//GEN-LAST:event_btnBegginingActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btnPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btnPatientsActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btnVisitsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisitsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btnVisitsActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void BtnLoginFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginFormActionPerformed
+         LoginDialogWin.setVisible(true);
+        this.setVisible(false);
+        LoginDialogWin.setLocationRelativeTo(this);
+        LoginDialogWin.pack();
+    }//GEN-LAST:event_BtnLoginFormActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+          String vards   = fieldLoginName.getText().trim();
+    String uzvards = fieldLoginSurname.getText().trim();
+    String kods    = fieldLoginPersonalCode.getText().trim();
+    String parole  = fieldLoginPassword.getText();
+ 
+    if (vards.isEmpty() || uzvards.isEmpty() || kods.isEmpty() || parole.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(LoginDialogWin,
+                "Lūdzu, aizpildiet visus laukus!", "Kļūda", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+       LoginDialogWin.setVisible(false);   
+ 
+    MainDialogWin.pack();               
+    MainDialogWin.setLocationRelativeTo(this);
+    this.setVisible(false);             
+    MainDialogWin.setVisible(true);
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void LoginDialogWinWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoginDialogWinWindowClosing
+          System.exit(0);
+    }//GEN-LAST:event_LoginDialogWinWindowClosing
+
+    private void MainDialogWinWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_MainDialogWinWindowClosing
+         System.exit(0);
+    }//GEN-LAST:event_MainDialogWinWindowClosing
+
+    private void btnAssignCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignCancelActionPerformed
+       
+    }//GEN-LAST:event_btnAssignCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -514,13 +1002,30 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog AdminDialogWin;
     private javax.swing.JButton BtnLoginForm;
+    private javax.swing.JDialog CalendarDialogWin;
     private javax.swing.JDialog LoginDialogWin;
+    private javax.swing.JDialog MainDialogWin;
     private javax.swing.JDialog RegisterDialogWin;
+    private javax.swing.JButton btnAssignCancel;
+    private javax.swing.JButton btnAssignConfirm;
+    private javax.swing.JButton btnBeggining;
+    private javax.swing.JButton btnCalendarNext;
+    private javax.swing.JButton btnCalendarPrev;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnPatients;
     private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnRegisterBack;
+    private javax.swing.JButton btnVisits;
+    private javax.swing.JComboBox<String> comboAssignDoctor;
+    private javax.swing.JComboBox<String> comboAssignPatient;
+    private javax.swing.JComboBox<String> comboAssignPatient1;
+    private javax.swing.JComboBox<String> comboAssignPatient2;
+    private javax.swing.JComboBox<String> comboAssignPatient3;
     private javax.swing.JComboBox<String> comboBoxRegisterRole;
+    private javax.swing.JComboBox<String> comboCalendarDoctor;
     private javax.swing.JTextField fieldLoginName;
     private javax.swing.JTextField fieldLoginPassword;
     private javax.swing.JTextField fieldLoginPersonalCode;
@@ -529,25 +1034,84 @@ public class FormDBSystemGUI extends javax.swing.JFrame {
     private javax.swing.JTextField fieldRegisterPassword;
     private javax.swing.JTextField fieldRegisterPersonalCode;
     private javax.swing.JTextField fieldRegisterSurname;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JPanel panelAdminDoctor;
+    private javax.swing.JPanel panelAdminPatient;
+    private javax.swing.JPanel panelAdminPatient1;
+    private javax.swing.JPanel panelAdminPatient2;
+    private javax.swing.JPanel panelAdminPatient3;
+    private javax.swing.JPanel panelCalendarGrid;
+    private javax.swing.JPanel panelCalendarHeader;
+    private javax.swing.JLabel txtAdminHeading;
+    private javax.swing.JLabel txtCalendarDoctorLabel;
+    private javax.swing.JLabel txtCalendarHeading;
+    private javax.swing.JLabel txtDoctorChoose;
+    private javax.swing.JLabel txtDoctorCodeLabel;
+    private javax.swing.JLabel txtDoctorCodeValue;
+    private javax.swing.JLabel txtDoctorName;
+    private javax.swing.JLabel txtDoctorSelectedHeading;
+    private javax.swing.JLabel txtDoctorTitl;
     private javax.swing.JLabel txtGreeting;
+    private javax.swing.JLabel txtGreetingMain;
+    private javax.swing.JLabel txtLegendBusy;
+    private javax.swing.JLabel txtLegendBusyDot;
+    private javax.swing.JLabel txtLegendFree;
+    private javax.swing.JLabel txtLegendFreeDot;
     private javax.swing.JLabel txtLoginHeading;
     private javax.swing.JLabel txtLoginName;
     private javax.swing.JLabel txtLoginPassword;
     private javax.swing.JLabel txtLoginPersonalCode;
     private javax.swing.JLabel txtLoginSurname;
+    private javax.swing.JLabel txtName;
+    private javax.swing.JLabel txtPacientChoose;
+    private javax.swing.JLabel txtPacientChoose1;
+    private javax.swing.JLabel txtPacientChoose2;
+    private javax.swing.JLabel txtPacientChoose3;
+    private javax.swing.JLabel txtPatientCodeLabel;
+    private javax.swing.JLabel txtPatientCodeLabel1;
+    private javax.swing.JLabel txtPatientCodeLabel2;
+    private javax.swing.JLabel txtPatientCodeLabel3;
+    private javax.swing.JLabel txtPatientCodeValue;
+    private javax.swing.JLabel txtPatientCodeValue1;
+    private javax.swing.JLabel txtPatientCodeValue2;
+    private javax.swing.JLabel txtPatientName;
+    private javax.swing.JLabel txtPatientName1;
+    private javax.swing.JLabel txtPatientName2;
+    private javax.swing.JLabel txtPatientName3;
+    private javax.swing.JLabel txtPatientSelectedHeading;
+    private javax.swing.JLabel txtPatientSelectedHeading1;
+    private javax.swing.JLabel txtPatientSelectedHeading2;
+    private javax.swing.JLabel txtPatientSelectedHeading3;
+    private javax.swing.JLabel txtPatientTitle;
+    private javax.swing.JLabel txtPatientTitle1;
+    private javax.swing.JLabel txtPatientTitle2;
+    private javax.swing.JLabel txtPatientTitle3;
     private javax.swing.JLabel txtRegisterHeading;
     private javax.swing.JLabel txtRegisterName;
     private javax.swing.JLabel txtRegisterPassword;
     private javax.swing.JLabel txtRegisterPersonalCode;
     private javax.swing.JLabel txtRegisterRole;
     private javax.swing.JLabel txtRegisterSurname;
+    private javax.swing.JLabel txtRole;
+    private javax.swing.JLabel txtWeekdayFri;
+    private javax.swing.JLabel txtWeekdayMon;
+    private javax.swing.JLabel txtWeekdaySat;
+    private javax.swing.JLabel txtWeekdaySun;
+    private javax.swing.JLabel txtWeekdayThu;
+    private javax.swing.JLabel txtWeekdayTue;
+    private javax.swing.JLabel txtWeekdayWed;
     // End of variables declaration//GEN-END:variables
 }
